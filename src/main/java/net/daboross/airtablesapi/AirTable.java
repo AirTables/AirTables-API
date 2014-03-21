@@ -2,6 +2,7 @@ package net.daboross.airtablesapi;
 
 import java.util.Map;
 import java.util.Set;
+import net.daboross.airtablesapi.listeners.TableUpdateListener;
 
 public interface AirTable {
 
@@ -17,9 +18,26 @@ public interface AirTable {
      * Gets the time since the last remote update of this table in milliseconds. Note that if this table is LOCAL, the
      * returned value is always 0.
      *
-     * @return 0 if getType() == LOCAL. Time since last update if getType() == REMOTE.
+     * @return 0 if {@code getType() == LOCAL}. Time since last update if {@code getType() == REMOTE}.
      */
     public long getTimeSinceLastUpdate();
+
+    /**
+     * Adds a TableUpdateListener to this table. The listener will continue to recieve updates until {@code
+     * removeUpdateListener()} is called with the listener.
+     *
+     * @param listener The listener to add
+     */
+    public void addUpdateListener(TableUpdateListener listener);
+
+    /**
+     * Removes a TableUpdateListener from this table. This will do nothing if the listener hasn't been added with {@code
+     * addUpdateListener()}. The listener will not recieve updates from this table unless {@code addUpdateListener()} is
+     * called again with the listener.
+     *
+     * @param listener The listener to remove
+     */
+    public void remoteUpdateListener(TableUpdateListener listener);
 
     /**
      * Gets the String value stored in this table under a given key
@@ -167,12 +185,14 @@ public interface AirTable {
 
     /**
      * Gets a set of the values in this table as strings.
+     *
      * @return An immutable set representing the values in this table.
      */
     public Set<String> getValues();
 
     /**
      * Gets this table as a raw map.
+     *
      * @return A map representation of this table. The map will be immutable if this table is REMOTE.
      */
     public Map<String, String> asMap();
