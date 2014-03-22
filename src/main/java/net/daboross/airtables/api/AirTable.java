@@ -1,8 +1,8 @@
-package net.daboross.airtablesapi;
+package net.daboross.airtables.api;
 
 import java.util.Map;
 import java.util.Set;
-import net.daboross.airtablesapi.listeners.TableUpdateListener;
+import net.daboross.airtables.api.listeners.TableUpdateListener;
 
 public interface AirTable {
 
@@ -196,4 +196,9 @@ public interface AirTable {
      * @return A map representation of this table. The map will be immutable if this table is REMOTE.
      */
     public Map<String, String> asMap();
+
+    /**
+     * Clears all values from this AirTable.
+     */
+    public void clear();
 }

@@ -1,6 +1,6 @@
-package net.daboross.airtablesapi;
+package net.daboross.airtables.api;
 
-import net.daboross.airtablesapi.listeners.ClientUpdateListener;
+import net.daboross.airtables.api.listeners.ClientUpdateListener;
 
 public interface AirTablesClient {
 
@@ -22,7 +22,19 @@ public interface AirTablesClient {
     public boolean doesExist(String tableName);
 
     /**
-     * Publishes a table on the network, or retrieves a network-side
+     * Publishes a table on the network,, or retrieves the table we know about (published or subscribed). If another
+     * client replies that they are publishing the table, this table will change type from LOCAL to REMOTE within
+     * 200ms.
+     *
+     * @param tableName Table to publish
+     * @return The table ppublished / retrieved. You should check that {@code table.getType() == TableType.LOCAL} before
+     * modifying.
+     */
+    public AirTable publishTable(String tableName);
+
+    /**
+     * Publishes a table on the network, or retrieves a network-side table. This is a method provided for convenience
+     * that will run a callback when we are absolutely sure that we own this table.
      *
      * @param tableName Table to publish
      * @param callback  Callback to run when the table has been published, or failed to be published. Callbacks should

@@ -1,4 +1,4 @@
-package net.daboross.airtablesapi;
+package net.daboross.airtables.api;
 
 public interface Callback<T> {
 
