@@ -1,4 +1,4 @@
-package net.daboross.airtables.api;
+package org.ingrahamrobotics.robottables.api;
 
 // Wish I could make this an enum
 public class TableType {

@@ -1,6 +1,6 @@
-package net.daboross.airtables.api.listeners;
+package org.ingrahamrobotics.robottables.api.listeners;
 
-import net.daboross.airtables.api.UpdateAction;
+import org.ingrahamrobotics.robottables.api.UpdateAction;
 
 public interface TableUpdateListener {
 

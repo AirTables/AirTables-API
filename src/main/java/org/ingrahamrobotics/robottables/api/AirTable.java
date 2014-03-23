@@ -1,8 +1,8 @@
-package net.daboross.airtables.api;
+package org.ingrahamrobotics.robottables.api;
 
 import java.util.Map;
 import java.util.Set;
-import net.daboross.airtables.api.listeners.TableUpdateListener;
+import org.ingrahamrobotics.robottables.api.listeners.TableUpdateListener;
 
 public interface AirTable {
 
