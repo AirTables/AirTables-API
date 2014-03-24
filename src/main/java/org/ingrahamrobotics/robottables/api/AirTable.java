@@ -1,7 +1,5 @@
 package org.ingrahamrobotics.robottables.api;
 
-import java.util.Map;
-import java.util.Set;
 import org.ingrahamrobotics.robottables.api.listeners.TableUpdateListener;
 
 public interface AirTable {
@@ -175,27 +173,6 @@ public interface AirTable {
      * @param value The value to set the key to
      */
     public void set(String key, String value);
-
-    /**
-     * Gets a set of the keys in this table
-     *
-     * @return An immutable set representing the keys in this table.
-     */
-    public Set<String> getKeys();
-
-    /**
-     * Gets a set of the values in this table as strings.
-     *
-     * @return An immutable set representing the values in this table.
-     */
-    public Set<String> getValues();
-
-    /**
-     * Gets this table as a raw map.
-     *
-     * @return A map representation of this table. The map will be immutable if this table is REMOTE.
-     */
-    public Map<String, String> asMap();
 
     /**
      * Clears all values from this AirTable.

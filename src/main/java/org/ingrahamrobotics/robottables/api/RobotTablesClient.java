@@ -2,7 +2,7 @@ package org.ingrahamrobotics.robottables.api;
 
 import org.ingrahamrobotics.robottables.api.listeners.ClientUpdateListener;
 
-public interface AirTablesClient {
+public interface RobotTablesClient {
 
     /**
      * Gets a table currently known to this client. The table is not guaranteed to be local or remote. If there are no
@@ -37,10 +37,10 @@ public interface AirTablesClient {
      * that will run a callback when we are absolutely sure that we own this table.
      *
      * @param tableName Table to publish
-     * @param callback  Callback to run when the table has been published, or failed to be published. Callbacks should
-     *                  check {@code table.getType() == TableType.LOCAL} before modifying.
+     * @param callback  TableCallback to run when the table has been published, or failed to be published. Callbacks
+     *                  should check {@code table.getType() == TableType.LOCAL} before modifying.
      */
-    public void publishTable(String tableName, Callback<AirTable> callback);
+    public void publishTable(String tableName, TableCallback callback);
 
     /**
      * Adds a ClientUpdateListener to this client. The listener will continue to recieve updates until {@code

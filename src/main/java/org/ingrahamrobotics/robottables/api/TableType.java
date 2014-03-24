@@ -17,7 +17,6 @@ public class TableType {
         this.stringRepresentation = stringRepresentation;
     }
 
-    @Override
     public String toString() {
         return stringRepresentation;
     }
