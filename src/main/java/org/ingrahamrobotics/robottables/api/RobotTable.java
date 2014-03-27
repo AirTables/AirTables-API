@@ -2,7 +2,7 @@ package org.ingrahamrobotics.robottables.api;
 
 import org.ingrahamrobotics.robottables.api.listeners.TableUpdateListener;
 
-public interface AirTable {
+public interface RobotTable {
 
     /**
      * Gets the type of this table. A LOCAL table will be modifiable, and is published locally. A REMOTE table is
@@ -172,10 +172,10 @@ public interface AirTable {
      * @param key   The key to set
      * @param value The value to set the key to
      */
-    public void set(String key, String value);
+    public String set(String key, String value);
 
     /**
-     * Clears all values from this AirTable.
+     * Clears all values from this RobotTable.
      */
     public void clear();
 }

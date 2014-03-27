@@ -7,5 +7,5 @@ public interface TableCallback {
      *
      * @param table Table parameter to this callback
      */
-    public void run(AirTable table);
+    public void run(RobotTable table);
 }

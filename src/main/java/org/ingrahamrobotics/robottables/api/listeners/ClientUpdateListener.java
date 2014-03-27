@@ -1,6 +1,6 @@
 package org.ingrahamrobotics.robottables.api.listeners;
 
-import org.ingrahamrobotics.robottables.api.AirTable;
+import org.ingrahamrobotics.robottables.api.RobotTable;
 import org.ingrahamrobotics.robottables.api.TableType;
 
 public interface ClientUpdateListener {
@@ -11,12 +11,12 @@ public interface ClientUpdateListener {
      * @param oldType Type table is changing from
      * @param newType Type table is changing to
      */
-    public void onTableChangeType(AirTable table, TableType oldType, TableType newType);
+    public void onTableChangeType(RobotTable table, TableType oldType, TableType newType);
 
     /**
      * Fired when a new table is created. Note that this is fired for both local and remote tables.
      *
      * @param table New table created
      */
-    public void onNewTable(AirTable table);
+    public void onNewTable(RobotTable table);
 }

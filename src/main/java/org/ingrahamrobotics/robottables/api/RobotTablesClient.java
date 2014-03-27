@@ -11,7 +11,7 @@ public interface RobotTablesClient {
      * @param tableName Table to retrieve
      * @return The table, or null if unknown
      */
-    public AirTable getTable(String tableName);
+    public RobotTable getTable(String tableName);
 
     /**
      * Checks whether or not this client knows about a given table known to this client.
@@ -30,7 +30,7 @@ public interface RobotTablesClient {
      * @return The table ppublished / retrieved. You should check that {@code table.getType() == TableType.LOCAL} before
      * modifying.
      */
-    public AirTable publishTable(String tableName);
+    public RobotTable publishTable(String tableName);
 
     /**
      * Publishes a table on the network, or retrieves a network-side table. This is a method provided for convenience
