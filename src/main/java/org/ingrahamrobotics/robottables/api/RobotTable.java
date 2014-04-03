@@ -167,6 +167,12 @@ public interface RobotTable {
     public boolean isBoolean(String key);
 
     /**
+     * Gets the name for this table.
+     * @return this tables 'name'. Case sensitive.
+     */
+    public String getName();
+
+    /**
      * Sets the given key to the given value
      *
      * @param key   The key to set
