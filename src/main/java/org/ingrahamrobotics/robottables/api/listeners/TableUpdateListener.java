@@ -7,7 +7,5 @@ public interface TableUpdateListener {
 
     public void onUpdateKey(RobotTable table, String key, String value, UpdateAction action);
 
-    public void onRemoveKey(RobotTable table, String key);
-
     public void onTableCleared(RobotTable table);
 }

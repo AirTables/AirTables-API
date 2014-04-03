@@ -171,6 +171,8 @@ public interface RobotTable {
      *
      * @param key   The key to set
      * @param value The value to set the key to
+     * @return The old value for this key, if any
+     * @throws java.lang.IllegalStateException if {@code getType() != TableType.LOCAL}
      */
     public String set(String key, String value);
 

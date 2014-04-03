@@ -27,20 +27,10 @@ public interface RobotTablesClient {
      * 200ms.
      *
      * @param tableName Table to publish
-     * @return The table ppublished / retrieved. You should check that {@code table.getType() == TableType.LOCAL} before
+     * @return The table published / retrieved. You should check that {@code table.getType() == TableType.LOCAL} before
      * modifying.
      */
     public RobotTable publishTable(String tableName);
-
-    /**
-     * Publishes a table on the network, or retrieves a network-side table. This is a method provided for convenience
-     * that will run a callback when we are absolutely sure that we own this table.
-     *
-     * @param tableName Table to publish
-     * @param callback  TableCallback to run when the table has been published, or failed to be published. Callbacks
-     *                  should check {@code table.getType() == TableType.LOCAL} before modifying.
-     */
-    public void publishTable(String tableName, TableCallback callback);
 
     /**
      * Adds a ClientUpdateListener to this client. The listener will continue to recieve updates until {@code
