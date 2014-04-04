@@ -168,6 +168,7 @@ public interface RobotTable {
 
     /**
      * Gets the name for this table.
+     *
      * @return this tables 'name'. Case sensitive.
      */
     public String getName();
@@ -181,6 +182,33 @@ public interface RobotTable {
      * @throws java.lang.IllegalStateException if {@code getType() != TableType.LOCAL}
      */
     public String set(String key, String value);
+
+    /**
+     * Gets the String value stored in the admin namespace in this table under a given key
+     *
+     * @param key The key for the value to retrieve
+     * @return The value stored in the admin space in this table, or null if there is no value stored under the given
+     * admin key.
+     */
+    public String getAdmin(String key);
+
+    /**
+     * Sets the given key to the given value in the admin namespace
+     *
+     * @param key   The key to set
+     * @param value The value to set the key to
+     * @return The old value for this key, if any
+     * @throws java.lang.IllegalStateException if {@code getType() != TableType.LOCAL}
+     */
+    public String setAdmin(String key, String value);
+
+    /**
+     * Checks whether or not the given key exists in this table.
+     *
+     * @param key The key to check
+     * @return True if the key exists in this table, false otherwise
+     */
+    public boolean containsAdmin(String key);
 
     /**
      * Clears all values from this RobotTable.
