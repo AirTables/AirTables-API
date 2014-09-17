@@ -4,20 +4,20 @@ package org.ingrahamrobotics.robottables.api;
 public class TableType {
 
     /**
-     * Local table. A table with this stringRepresentation will be able to be modified by the client.
+     * Local table. A table with this type is local and modifiable.
      */
     public static final TableType LOCAL = new TableType("Local");
     /**
-     * Remote table. A table with this stringRepresentation is published by a remote client, and is unmodifiable.
+     * Remote table. A table with this type is published by a remote client and unmodifiable.
      */
     public static final TableType REMOTE = new TableType("Remote");
-    private final String stringRepresentation;
+    private final String stringValue;
 
-    private TableType(final String stringRepresentation) {
-        this.stringRepresentation = stringRepresentation;
+    private TableType(final String stringValue) {
+        this.stringValue = stringValue;
     }
 
     public String toString() {
-        return stringRepresentation;
+        return stringValue;
     }
 }
