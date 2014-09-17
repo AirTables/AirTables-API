@@ -13,12 +13,13 @@ public interface RobotTable {
     public TableType getType();
 
     /**
-     * Gets the time since the last remote update of this table in milliseconds. Note that if this table is LOCAL, the
-     * returned value is always 0.
+     * Gets the time of the last remote update of this table in milliseconds since epoch. Note that if this table is
+     * LOCAL, the returned value is always equal to System.currentTimeMillis().
      *
-     * @return 0 if {@code getType() == LOCAL}. Time since last update if {@code getType() == REMOTE}.
+     * @return System.currentTimeMillis() if {@code getType() == LOCAL}. Last update time if {@code getType() ==
+     * REMOTE}.
      */
-    public long getTimeSinceLastUpdate();
+    public long getLastUpdateTime();
 
     /**
      * Adds a TableUpdateListener to this table. The listener will continue to recieve updates until {@code
