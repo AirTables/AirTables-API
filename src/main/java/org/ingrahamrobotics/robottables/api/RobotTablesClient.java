@@ -19,10 +19,10 @@ public interface RobotTablesClient {
      * @param tableName Table to check if exists
      * @return True if the table is currently known to this client as a local or remote table, false otherwise.
      */
-    public boolean doesExist(String tableName);
+    public boolean exists(String tableName);
 
     /**
-     * Publishes a table on the network,, or retrieves the table we know about (published or subscribed). If another
+     * Publishes a table on the network, or retrieves the table we know about (published or subscribed). If another
      * client replies that they are publishing the table, this table will change type from LOCAL to REMOTE within
      * 200ms.
      *
