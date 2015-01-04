@@ -87,25 +87,25 @@
     </build>
 
     <issueManagement>
-        <url>https://github.com/AirTables/AirTables-API/issues</url>
+        <url>https://github.com/FIRST-4030/RobotTables-API/issues</url>
         <system>Github Issues</system>
     </issueManagement>
     <ciManagement>
         <system>teamcity</system>
-        <url>http://ci.dabo.guru/p/AirTablesApi</url>
+        <url>http://ci.dabo.guru/p/RobotTablesApi</url>
     </ciManagement>
     <distributionManagement>
         <repository>
-            <id>dabo.guru</id>
+            <id>repo.dabo.guru</id>
             <name>Release Repository</name>
             <uniqueVersion>false</uniqueVersion>
-            <url>http://dabo.guru/nexus/content/repositories/releases/</url>
+            <url>http://repo.dabo.guru/nexus/content/repositories/releases/</url>
         </repository>
         <snapshotRepository>
-            <id>dabo.guru</id>
+            <id>repo.dabo.guru</id>
             <name>Snapshot Repository</name>
             <uniqueVersion>false</uniqueVersion>
-            <url>http://dabo.guru/nexus/content/repositories/snapshots/</url>
+            <url>http://repo.dabo.guru/nexus/content/repositories/snapshots/</url>
         </snapshotRepository>
     </distributionManagement>
 
