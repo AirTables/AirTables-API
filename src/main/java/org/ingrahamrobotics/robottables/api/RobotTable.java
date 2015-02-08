@@ -16,7 +16,7 @@ public interface RobotTable {
      * Gets the time of the last remote update of this table in milliseconds since epoch. Note that if this table is
      * LOCAL, the returned value is always equal to System.currentTimeMillis(). If this is a remote table which hasn't
      * been confirmed existing on the network, this will return -1.
-     * <p/>
+     * <p>
      * TODO: Is having a state for not knowing if the table exists (-1) separate from not being every updated (0)
      * useful?
      *
