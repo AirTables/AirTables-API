@@ -44,6 +44,15 @@ public interface RobotTable {
     public void addUpdateListener(TableUpdateListener listener);
 
     /**
+     * Adds a TableUpdateListener to this table. The listener will continue to recieve updates until {@code
+     * removeUpdateListener()} is called with the listener. If {@code initialUpdate == true} the listener will
+     * immidietly recieve a new key event for each of the keys which is already known.
+     *
+     * @param listener The listener to add
+     */
+    public void addUpdateListener(TableUpdateListener listener, boolean initialUpdate);
+
+    /**
      * Removes a TableUpdateListener from this table. This will do nothing if the listener hasn't been added with {@code
      * addUpdateListener()}. The listener will not recieve updates from this table unless {@code addUpdateListener()} is
      * called again with the listener.
