@@ -1,5 +1,6 @@
 package org.ingrahamrobotics.robottables.api;
 
+import java.util.List;
 import org.ingrahamrobotics.robottables.api.listeners.TableUpdateListener;
 
 public interface RobotTable {
@@ -223,6 +224,13 @@ public interface RobotTable {
      * @return True if the key exists in this table, false otherwise
      */
     public boolean containsAdmin(String key);
+
+    /**
+     * Gets a copy of all keys
+     *
+     * @return A new list
+     */
+    public List<String> getKeys();
 
     /**
      * Clears all values from this RobotTable.
